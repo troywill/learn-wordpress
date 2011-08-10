@@ -1,0 +1,4 @@
+I ( Troy Duane Will, <troydwill@gmail.com> installed Wordpress on Monday, August 1, 2011 on Shiloh GNU/Linux ( my own GNU/Linux distribution which I derived from Arch Linux - http://www.archlinux.org )
+
+Wordpress is using Apache and PHP. I edited the Apache http.conf configuration file, edited the Apache virtual host file, created a mysql database, and changed the group of the wordpress directory to http and the permission to 755.
+

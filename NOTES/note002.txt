@@ -1,0 +1,8 @@
+TDW - 2011-08-01
+
+The sample home page has the following instruction:
+
+"As a new WordPress user, you should go to your dashboard to delete this page and create new pages for your content. Have fun!"
+
+So I did.
+
