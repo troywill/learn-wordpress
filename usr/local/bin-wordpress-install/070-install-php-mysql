@@ -1,3 +1,4 @@
 #!/bin/bash
-sudo emacs /etc/php/php.ini
-sudo /etc/rc.d/httpd restart
+emacs /etc/php/php.ini
+/etc/rc.d/httpd restart
+
