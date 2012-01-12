@@ -1,14 +1,15 @@
 Primary Documentation: http://www.php.net/manual/en/install.unix.apache2.php
+Secondary Documentation: 1. https://wiki.archlinux.org/index.php/PHP, 2. https://wiki.archlinux.org/index.php/LAMP
+
+1. Install the "php-apache" package from extra using pacman.
+2. Add these lines in /etc/httpd/conf/httpd.conf:
+     Place this in the "LoadModule" list anywhere after LoadModule dir_module modules/mod_dir.so:
+       LoadModule php5_module modules/libphp5.so
+     Place this at the end of the "Include" list:
+       Include conf/extra/php5_module.conf
 
 
-PHP
-Install the "php-apache" package from extra using pacman.
-Add these lines in /etc/httpd/conf/httpd.conf:
-Place this in the "LoadModule" list anywhere after LoadModule dir_module modules/mod_dir.so:
- LoadModule php5_module modules/libphp5.so
-Place this at the end of the "Include" list:
- Include conf/extra/php5_module.conf
-Note: If you do not see libphp.so in the Apache modules directory, you may have forgotten to install the php-apache package.
+
 If your DocumentRoot is not /srv/http, add it to open_basedir in /etc/php/php.ini as such:
  open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:/path/to/documentroot
 Restart the Apache service to make changes take effect:
