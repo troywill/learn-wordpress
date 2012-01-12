@@ -1,28 +1,2 @@
 #!/bin/sh
-EDITOR='emacs'
 pacman --sync apache
-${EDITOR} /etc/httpd/ 010-install-apache
-/etc/rc.d/httpd start
-${EDITOR} /etc/rc.conf
-
-exit
-PHP
-Install the "php-apache" package from extra using pacman.
-Add these lines in /etc/httpd/conf/httpd.conf:
-Place this in the "LoadModule" list anywhere after LoadModule dir_module modules/mod_dir.so:
- LoadModule php5_module modules/libphp5.so
-Place this at the end of the "Include" list:
- Include conf/extra/php5_module.conf
-Note: If you do not see libphp.so in the Apache modules directory, you may have forgotten to install the php-apache package.
-If your DocumentRoot is not /srv/http, add it to open_basedir in /etc/php/php.ini as such:
- open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:/path/to/documentroot
-Restart the Apache service to make changes take effect:
- # /etc/rc.d/httpd restart
-A test file for PHP is included by default and can be found in /srv/http
-Remember to copy this file to ~/public_html if you permitted such a configuration.
-Test PHP: http://localhost/test.php or http://localhost/~myname/test.php
-If this file does not exist, just place the following in /srv/http/test.php:
- <?php phpinfo(); ?>
-If the PHP instruction is not executed (you see : <html>...</html>), check that you have added "Includes" to the "Options" line for your root directory. Moreover, make sure you have this line in your <IfModule mime_module> section:
- AddHandler application/x-httpd-php .php
-

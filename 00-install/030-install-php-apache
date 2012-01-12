@@ -1,5 +1,3 @@
-#!/bin/bash
-EDITOR='emacs'
-
+#!/bin/sh
 pacman --sync php-apache
 
