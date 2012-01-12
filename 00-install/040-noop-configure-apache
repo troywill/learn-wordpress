@@ -8,7 +8,11 @@ Secondary Documentation: 1. https://wiki.archlinux.org/index.php/PHP, 2. https:/
      Place this at the end of the "Include" list:
        Include conf/extra/php5_module.conf
 
+3. Add this line in /etc/httpd/conf/mime.types:
+   application/x-httpd-php		php php5
 
+
+       
 
 If your DocumentRoot is not /srv/http, add it to open_basedir in /etc/php/php.ini as such:
  open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:/path/to/documentroot

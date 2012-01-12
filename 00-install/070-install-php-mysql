@@ -1,4 +1,0 @@
-#!/bin/bash
-emacs /etc/php/php.ini
-/etc/rc.d/httpd restart
-

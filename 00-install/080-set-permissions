@@ -1,0 +1,6 @@
+#!/bin/sh
+HTTP_GROUP='http'
+WORDPRESS_DIR='/srv/http/wordpress'
+chgrp --verbose ${HTTP_GROUP} ${WORDPRESS_DIR}
+chmod --verbose g+w ${WORDPRESS_DIR}
+
