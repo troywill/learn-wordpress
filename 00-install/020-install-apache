@@ -1,11 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 EDITOR='emacs'
-SUDO='sudo'
-
-${SUDO} pacman --sync apache
-${SUDO} ${EDITOR} /etc/httpd/ 010-install-apache
-${SUDO} /etc/rc.d/httpd start
-${SUDO} ${EDITOR} /etc/rc.conf
+pacman --sync apache
+${EDITOR} /etc/httpd/ 010-install-apache
+/etc/rc.d/httpd start
+${EDITOR} /etc/rc.conf
 
 exit
 PHP
