@@ -10,18 +10,3 @@ Secondary Documentation: 1. https://wiki.archlinux.org/index.php/PHP, 2. https:/
 
 3. Add this line in /etc/httpd/conf/mime.types:
    application/x-httpd-php		php php5
-
-
-       
-
-If your DocumentRoot is not /srv/http, add it to open_basedir in /etc/php/php.ini as such:
- open_basedir=/srv/http/:/home/:/tmp/:/usr/share/pear/:/path/to/documentroot
-Restart the Apache service to make changes take effect:
- # /etc/rc.d/httpd restart
-A test file for PHP is included by default and can be found in /srv/http
-Remember to copy this file to ~/public_html if you permitted such a configuration.
-Test PHP: http://localhost/test.php or http://localhost/~myname/test.php
-If this file does not exist, just place the following in /srv/http/test.php:
- <?php phpinfo(); ?>
-If the PHP instruction is not executed (you see : <html>...</html>), check that you have added "Includes" to the "Options" line for your root directory. Moreover, make sure you have this line in your <IfModule mime_module> section:
- AddHandler application/x-httpd-php .php
