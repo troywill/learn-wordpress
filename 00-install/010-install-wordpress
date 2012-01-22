@@ -1,3 +1,2 @@
 #!/bin/sh
-pacman --sync wordpress
-
+sudo pacman --sync wordpress

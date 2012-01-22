@@ -1,2 +1,2 @@
 #!/bin/sh
-pacman --sync apache
+sudo pacman --sync apache

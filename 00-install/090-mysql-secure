@@ -1,4 +1,5 @@
 #!/bin/bash
+exit
 /usr/bin/mysqladmin -u root password 'new-password'
 /usr/bin/mysqladmin -u root -h localhost password 'new-password'
 exit

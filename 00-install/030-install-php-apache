@@ -1,3 +1,2 @@
 #!/bin/sh
-pacman --sync php-apache
-
+sudo pacman --sync php-apache
